@@ -1,4 +1,5 @@
 import BigProjectSection from "./BigProjectSection";
+import Blogs from "./Blogs";
 import Comments from "./Comments";
 import Header from "./Header";
 import NewsSection from "./NewsSection";
@@ -16,6 +17,7 @@ export default function Home() {
       <OtherProjects />
       <NewsSection />
       <Comments />
+      <Blogs />
       <div className="" style={{ height: "100px" }}></div>
     </div>
   );
