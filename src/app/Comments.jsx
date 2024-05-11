@@ -4,29 +4,28 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import TitleSection from "./components/common/TitleSection";
 import Comment from "./components/common/Comment";
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import SwipperController from "./components/common/SwipperController";
 
 function Comments() {
   const swiperRef = useRef();
   return (
-    <div className="p-4 space-y-4">
-      <TitleSection title="نظرات" subTitle="مشتریان" />
-      <div className="flex justify-start items-center gap-x-4">
-        <div
-          onClick={() => swiperRef.current?.slidePrev()}
-          className="bg-white flex justify-center items-center cursor-pointer rounded-lg p-2"
-        >
-          <IconChevronRight size={32} />
-        </div>
-        <div
-          onClick={() => swiperRef.current?.slideNext()}
-          className="bg-cu_primary-100 flex justify-center items-center cursor-pointer rounded-lg p-2"
-        >
-          <IconChevronLeft color="white" size={32} />
-        </div>
+    <div className="p-4 space-y-4 lg:flex lg:justify-between lg:items-center lg:gap-x-4">
+      <div className="space-y-4 lg:w-1/3">
+        <TitleSection title="نظرات" subTitle="مشتریان" />
+        <small className="hidden lg:flex">
+          بخشی کوچکی از نظرات مشتریان عزیز میکا پارک
+        </small>
+        <SwipperController
+          next={() => swiperRef.current?.slideNext()}
+          prev={() => swiperRef.current?.slidePrev()}
+        />
       </div>
       <Swiper
-        spaceBetween={50}
+        breakpoints={{
+          320: { slidesPerView: 1 },
+          768: { slidesPerView: 2, spaceBetween: 20 },
+          900: { slidesPerView: 3, spaceBetween: 20 },
+        }}
         slidesPerView={1}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;

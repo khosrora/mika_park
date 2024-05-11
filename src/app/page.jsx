@@ -9,7 +9,7 @@ import ServicesMikaPark from "./ServicesMikaPark";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="lg:space-y-14">
       <Header />
       <ServicesMikaPark />
       <BigProjectSection />
@@ -18,7 +18,6 @@ export default function Home() {
       <NewsSection />
       <Comments />
       <Blogs />
-      <div className="" style={{ height: "100px" }}></div>
     </div>
   );
 }

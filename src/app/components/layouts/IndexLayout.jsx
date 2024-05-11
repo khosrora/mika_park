@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 function IndexLayout({ children }) {
   return (
-    <div>
+    <div className="max-w-7xl m-auto">
       <Header />
       {children}
       <Footer />

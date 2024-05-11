@@ -6,7 +6,7 @@ function ServicesMikaPark() {
   return (
     <div className="p-4 space-y-4">
       <TitleSection title="خدمات" subTitle="میکا پارک" />
-      <div className="space-y-4 my-4">
+      <div className="grid gap-4 grid-cols-1 w-full lg:grid-cols-5">
         {services.map((item) => (
           <div className="bg-white rounded-lg p-4 space-y-2">
             <div className="flex justify-start items-center gap-x-2">

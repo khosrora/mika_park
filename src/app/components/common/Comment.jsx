@@ -17,6 +17,18 @@ function Comment() {
           اكثر پروژه هاي اين چنيني از سوي سازندگان سنتي موارد متعددي مغفول مي
           ماند و باعث بروز مشكلات زياد براي خريداران مي شود.
         </small>
+        <div className="divider"></div>
+        <div className="flex justify-between items-center">
+          <div className="flex justify-start items-center gap-x-4">
+            <div className="avatar">
+              <div className="w-8 rounded-full">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg" />
+              </div>
+            </div>
+            <small className="text-xs"> محمدرضا پوراسماعیل </small>
+          </div>
+          <small>1/2/1400</small>
+        </div>
       </div>
     </div>
   );

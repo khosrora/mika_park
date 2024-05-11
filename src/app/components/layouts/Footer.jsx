@@ -4,7 +4,7 @@ import ImageCu from "../common/Logo";
 
 function Footer() {
   return (
-    <footer className="footer p-10 bg-base-200 text-base-content">
+    <footer className="footer p-10 bg-white text-base-content mt-14 lg:rounded-md">
       <aside>
         <div className="flex justify-start items-center gap-x-4">
           <ImageCu

@@ -1,10 +1,12 @@
 "use client";
-import React from "react";
-import TitleSection from "./components/common/TitleSection";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import TitleSection from "./components/common/TitleSection";
 
 // Import Swiper styles
+import Link from "next/link";
 import "swiper/css";
+import SwipperController from "./components/common/SwipperController";
 
 let data = [
   {
@@ -35,33 +37,49 @@ let data = [
 ];
 
 function OtherProjects() {
+  const swiperRef = useRef();
   return (
     <div className="space-y-4">
-      <div className="p-4">
-        <TitleSection title="سایر پروژه ها" />
+      <div className="p-4 flex justify-between items-center">
+        <TitleSection title="سایر" subTitle="پروژه ها" />
+
+        <SwipperController
+          next={() => swiperRef.current?.slideNext()}
+          prev={() => swiperRef.current?.slidePrev()}
+        />
       </div>
 
       <Swiper
         spaceBetween={1}
-        slidesPerView={2.2}
+        breakpoints={{
+          320: { slidesPerView: 2 },
+          480: { slidesPerView: 3 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+        }}
+        onBeforeInit={(swiper) => {
+          swiperRef.current = swiper;
+        }}
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={(swiper) => console.log(swiper)}
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <div
-              style={{
-                "--image-url": `url(${item.link})`,
-              }}
-              className="bg-[image:var(--image-url)] h-60 bg-cover mx-2 rounded-lg relative overflow-hidden"
-            >
+            <Link href="/">
               <div
-                className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed flex justify-center items-end pb-2"
-                style={{ backgroundColor: "rgb(0, 0, 0, 0.3)" }}
+                style={{
+                  "--image-url": `url(${item.link})`,
+                }}
+                className="bg-[image:var(--image-url)] h-60 bg-cover mx-2 rounded-lg relative overflow-hidden lg:h-96"
               >
-                <p className="text-white text-xs font-bold">{item.title}</p>
+                <div
+                  className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed flex justify-center items-end pb-2"
+                  style={{ backgroundColor: "rgb(0, 0, 0, 0.3)" }}
+                >
+                  <p className="text-white text-xs font-bold">{item.title}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

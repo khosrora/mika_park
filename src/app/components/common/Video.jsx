@@ -3,8 +3,8 @@ import React from "react";
 function Video({ poster, src, width, height }) {
   return (
     <video
-      autoplay={false}
-      playsinline={true}
+      autoPlay={false}
+      playsInline={true}
       controls={true}
       poster={poster}
       width={width}
