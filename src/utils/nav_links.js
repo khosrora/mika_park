@@ -32,7 +32,7 @@ export const navLinks=  [
     {
         id : 7  , 
         name : 'ارتباط با ما' , 
-        href : '/'
+        href : '/contact_us'
     },
     {
         id : 8  , 

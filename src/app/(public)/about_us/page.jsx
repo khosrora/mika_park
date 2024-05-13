@@ -1,11 +1,9 @@
-import Image from "next/image";
+import TitlePage from "@/app/components/common/TitlePage";
 
 async function page() {
   return (
     <div className="p-4 space-y-8 lg:space-y-16">
-      <div className="flex justify-center items-center">
-        <h1 className="text-3xl font-bold">درباره ما</h1>
-      </div>
+      <TitlePage text="درباره ما" />
       <div className="flex flex-col justify-center items-center relative">
         <img
           src="https://www.esbnyc.com/sites/default/files/2019-10/home_banner-min.jpg"
