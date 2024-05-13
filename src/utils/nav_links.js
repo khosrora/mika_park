@@ -7,7 +7,7 @@ export const navLinks=  [
     {
         id : 2  , 
         name : 'پروژه ها' , 
-        href : '/'
+        href : '/all_projects'
     },
     {
         id : 3  , 

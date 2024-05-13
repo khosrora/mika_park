@@ -9,7 +9,7 @@ import SwipperController from "./components/common/SwipperController";
 function Comments() {
   const swiperRef = useRef();
   return (
-    <div className="p-4 space-y-4 lg:flex lg:justify-between lg:items-center lg:gap-x-4">
+    <div className="p-4 space-y-4 lg:flex lg:justify-between lg:items-center lg:gap-x-4 min-w-0">
       <div className="space-y-4 lg:w-1/3">
         <TitleSection title="نظرات" subTitle="مشتریان" />
         <small className="hidden lg:flex">
