@@ -58,7 +58,7 @@ function GalleryImage() {
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <img src={item.link} />
+            <img src={item.link} className="min-h-80 max-h-80 object-cover" /> 
           </SwiperSlide>
         ))}
       </Swiper>
@@ -73,7 +73,7 @@ function GalleryImage() {
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <img src={item.link} />
+            <img src={item.link} className="min-h-20 max-h-20 object-cover" />
           </SwiperSlide>
         ))}
       </Swiper>
