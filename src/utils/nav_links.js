@@ -47,6 +47,6 @@ export const navLinks=  [
     {
         id : 10  , 
         name : 'گالری' , 
-        href : '/'
+        href : '/gallery'
     }
 ]
