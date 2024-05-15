@@ -1,5 +1,5 @@
-import { services } from "@/constance/Services";
 import React from "react";
+import { services } from "../constance/Services";
 import TitleSection from "./components/common/TitleSection";
 
 function ServicesMikaPark() {

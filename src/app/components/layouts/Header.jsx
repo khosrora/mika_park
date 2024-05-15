@@ -1,12 +1,12 @@
-import { navLinks } from "@/utils/nav_links";
 import { IconMenu2 } from "@tabler/icons-react";
 import Link from "next/link";
+import { navLinks } from "../../../utils/nav_links";
 import ImageCu from "../common/Logo";
 import PhoneSvg from "../Icons/PhoneSvg";
 
 function Header() {
   return (
-    <div className="p-4">
+    <div className="p-4 lg:p-0 lg:py-4">
       <div className="bg-white rounded-lg p-4">
         <div className="w-full flex justify-between items-center">
           <div className="flex justify-start items-center gap-x-2">

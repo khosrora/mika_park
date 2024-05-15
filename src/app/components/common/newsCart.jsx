@@ -2,34 +2,35 @@ import { IconArrowNarrowLeft } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
 
-function BlogCart() {
+function NewsCart() {
   return (
     <div className="card bg-white mx-2">
       <figure className="p-4">
         <img
-          src="https://emap-romulus-prod.s3.eu-west-1.amazonaws.com/wp-content/uploads/sites/8/2024/05/Princess-Alexandra-Hospital-748x499.png"
+          src="https://www.remlimited.com/media/qrxi1w05/dsc_2501.jpg?center=0%2C0&heightratio=0.5306&mode=crop&upscale=true&width=1920"
           alt="Shoes"
           className="rounded-xl"
         />
       </figure>
       <div className="card-body text-right">
-        <h2 className="card-title">طراحی معماری ساختمان</h2>
+        <h2 className="card-title">بهترین عایق های صداگیر</h2>
         <p className="text-xs leading-6">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
           استفاده از طراحان گرافیک است،{" "}
         </p>
-        <div className="card-actions">
+        <div className="card-actions flex justify-between items-center">
           <Link
-            href="/blogs/1"
+            href="/news/1"
             className="text-cu_primary-100 flex justify-start items-center gap-x-4"
           >
             ادامه مطلب
             <IconArrowNarrowLeft size={24} stroke={1} />
           </Link>
+          <small className="text-xs">1403/02/01</small>
         </div>
       </div>
     </div>
   );
 }
 
-export default BlogCart;
+export default NewsCart;

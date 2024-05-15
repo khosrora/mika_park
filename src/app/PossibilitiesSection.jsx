@@ -1,5 +1,5 @@
-import { possibilities } from "@/constance/possibillities";
 import React from "react";
+import { possibilities } from "../constance/possibillities";
 import TitleSection from "./components/common/TitleSection";
 
 function PossibilitiesSection() {
