@@ -9,7 +9,7 @@ function InputCu({ title, type, placeholder, validation, errorMessage, name }) {
       <input
         type={type}
         placeholder={placeholder}
-        className="input input-bordered w-full border-none"
+        className="input input-bordered w-full border"
         name={name}
         {...validation}
       />

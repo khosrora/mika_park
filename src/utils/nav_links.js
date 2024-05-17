@@ -12,12 +12,12 @@ export const navLinks = [
     {
         id: 3,
         name: 'همکاری با ما',
-        href: '/'
+        href: '/work_with_us'
     },
     {
         id: 5,
         name: 'دفاتر فروش',
-        href: '/'
+        href: '/sales_offices'
     },
     {
         id: 6,

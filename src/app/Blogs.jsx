@@ -27,9 +27,9 @@ function Blogs() {
         }}
         breakpoints={{
           320: { slidesPerView: 1 },
-          480: { slidesPerView: 3 },
+          480: { slidesPerView: 2 },
           768: { slidesPerView: 4 },
-          1024: { slidesPerView: 5 },
+          // 1024: { slidesPerView: 5 },
         }}
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={(swiper) => console.log(swiper)}

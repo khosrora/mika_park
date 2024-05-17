@@ -1,10 +1,14 @@
+"use client";
 import { IconMenu2 } from "@tabler/icons-react";
 import Link from "next/link";
 import { navLinks } from "../../../utils/nav_links";
 import ImageCu from "../common/Logo";
 import PhoneSvg from "../Icons/PhoneSvg";
+import { usePathname } from "next/navigation";
 
 function Header() {
+  const pathname = usePathname();
+
   return (
     <div className="p-4 lg:p-0 lg:py-4">
       <div className="bg-white rounded-lg p-4">
@@ -22,7 +26,12 @@ function Header() {
           <ul className="hidden lg:flex lg:justify-between lg:items-center lg:gap-x-4">
             {navLinks.map((item) => (
               <li key={item.id} className="text-[14px]">
-                <Link href={item.href} className="hover:text-cu_primary-100">
+                <Link
+                  href={item.href}
+                  className={`hover:text-cu_primary-100 ${
+                    pathname === item.href ? "text-cu_primary-100" : ""
+                  }`}
+                >
                   {item.name}
                 </Link>
               </li>

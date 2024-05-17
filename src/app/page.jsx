@@ -7,7 +7,7 @@ import OtherProjects from "./OtherProjects";
 import PossibilitiesSection from "./PossibilitiesSection";
 import ServicesMikaPark from "./ServicesMikaPark";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="lg:space-y-14">
       <Header />

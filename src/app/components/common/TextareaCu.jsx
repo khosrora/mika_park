@@ -15,7 +15,7 @@ function TextareaCu({
       </div>
       <textarea
         type={type}
-        className="input input-bordered w-full border-none min-h-32"
+        className="input input-bordered w-full border min-h-32"
         name={name}
         {...validation}
       ></textarea>
