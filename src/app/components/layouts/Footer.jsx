@@ -1,4 +1,5 @@
 import { IconBrandInstagram } from "@tabler/icons-react";
+import Link from "next/link";
 import React from "react";
 import ImageCu from "../common/Logo";
 
@@ -24,17 +25,28 @@ function Footer() {
       </aside>
       <nav>
         <h6 className="footer-title">لینک سریع</h6>
-        <a className="link link-hover">خانه</a>
-        <a className="link link-hover">درباره ما</a>
-        <a className="link link-hover">بلاگ</a>
-        <a className="link link-hover">ارتباط با ما</a>
+        <Link href="/" className="link link-hover">
+          خانه
+        </Link>
+        <Link href="/critics" className="link link-hover">
+          انتقادات و پیشنهادات
+        </Link>
+        <Link href="/about_us" className="link link-hover">
+          درباره ما
+        </Link>
+        <Link href="/blogs" className="link link-hover">
+          بلاگ
+        </Link>
+        <Link href="contact_us" className="link link-hover">
+          ارتباط با ما
+        </Link>
       </nav>
       <nav>
         <h6 className="footer-title">تماس با ما</h6>
-        <a className="link link-hover">8 صبح تا 5 غروب</a>
-        <a className="link link-hover">زیباشهر نبش پیامبر اعظم 11</a>
-        <a className="link link-hover">054-467894</a>
-        <a className="link link-hover">info@gmail.ir</a>
+        <p className="link link-hover">8 صبح تا 5 غروب</p>
+        <p className="link link-hover">زیباشهر نبش پیامبر اعظم 11</p>
+        <p className="link link-hover">054-467894</p>
+        <p className="link link-hover">info@gmail.ir</p>
       </nav>
       <nav>
         <h6 className="footer-title">راه های ارتباطی</h6>
