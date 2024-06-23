@@ -1,3 +1,4 @@
+"use server";
 import BigProjectSection from "./BigProjectSection";
 import Blogs from "./Blogs";
 import Comments from "./Comments";

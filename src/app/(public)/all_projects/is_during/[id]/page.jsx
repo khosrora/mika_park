@@ -1,4 +1,5 @@
 import React from "react";
+import Bloks from "./Bloks";
 import DetailsSection from "./DetailsSection";
 import Features from "./Features";
 import GalleryImage from "./GalleryImage";
@@ -12,6 +13,7 @@ function page({ params }) {
         <DetailsSection />
       </div>
       <Features />
+      <Bloks />
     </div>
   );
 }

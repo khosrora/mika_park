@@ -4,11 +4,11 @@ export const navLinks = [
         name: 'خانه',
         href: '/'
     },
-    {
-        id: 2,
-        name: 'پروژه ها',
-        href: '/all_projects'
-    },
+    // {
+    //     id: 2,
+    //     name: 'پروژه ها',
+    //     href: '/all_projects'
+    // },
     {
         id: 3,
         name: 'همکاری با ما',

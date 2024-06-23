@@ -15,7 +15,7 @@ import SalesCart from "@/app/components/common/SalesCart";
 
 export default function Slider() {
   return (
-    <>
+    <div className="sales_offices">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -38,6 +38,6 @@ export default function Slider() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 }

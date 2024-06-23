@@ -1,9 +1,9 @@
-.allprojects .swiper {
+.swiper {
   width: 100%;
   height: 100%;
 }
 
-.allprojects .swiper-slide {
+.swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -14,47 +14,47 @@
   align-items: center;
 }
 
-.allprojects .swiper-slide img {
+.swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.allprojects .swiper {
+.swiper {
   width: 100%;
   height: 300px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.allprojects .swiper-slide {
+.swiper-slide {
   background-size: cover;
   background-position: center;
 }
 
-.allprojects .mySwiper2 {
+.mySwiper2 {
   height: 80%;
   width: 100%;
 }
 
-.allprojects .mySwiper {
+.mySwiper {
   height: 20%;
   box-sizing: border-box;
   padding: 10px 0;
 }
 
-.allprojects .mySwiper .swiper-slide {
+.mySwiper .swiper-slide {
   width: 25%;
   height: 100%;
   opacity: 0.4;
 }
 
-.allprojects .mySwiper .swiper-slide-thumb-active {
+.mySwiper .swiper-slide-thumb-active {
   opacity: 1;
 }
 
-.allprojects .swiper-slide img {
+.swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;

@@ -44,7 +44,7 @@ let data = [
 function GalleryImage() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
-    <div className="min-w-0 max-w-lg lg:max-h-[600px]">
+    <div className="min-w-0 max-w-lg allprojects lg:max-h-[600px]">
       <Swiper
         style={{
           "--swiper-navigation-color": "#fff",

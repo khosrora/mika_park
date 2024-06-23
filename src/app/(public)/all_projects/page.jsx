@@ -44,11 +44,13 @@ let data = [
   },
 ];
 
-function page() {
+function page({ searchParams: { isDuring } }) {
   return (
     <div>
       <div className="p-4 space-y-8 lg:space-y-16">
-        <TitlePage text="پروژه ها" />
+        <TitlePage
+          text={isDuring === 'true' ? "پروژه های در حال انجام" : "پروژه های انجام شده"}
+        />
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">

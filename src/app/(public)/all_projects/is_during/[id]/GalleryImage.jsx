@@ -1,12 +1,17 @@
 "use client";
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import TitleSection from "./components/common/TitleSection";
 
 // Import Swiper styles
 import "swiper/css";
-import ProjectCard from "./components/common/ProjectCard";
-import SwipperController from "./components/common/SwipperController";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+
+import "./styles.css";
+
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
 let data = [
   {
@@ -36,36 +41,39 @@ let data = [
   },
 ];
 
-function OtherProjects() {
-  const swiperRef = useRef();
+function GalleryImage() {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
-    <div className="space-y-4">
-      <div className="p-4 flex justify-between items-center">
-        <TitleSection title="سایر" subTitle="پروژه ها" />
-
-        <SwipperController
-          next={() => swiperRef.current?.slideNext()}
-          prev={() => swiperRef.current?.slidePrev()}
-        />
-      </div>
-
+    <div className="min-w-0 max-w-lg lg:max-h-[600px]">
       <Swiper
-        spaceBetween={1}
-        breakpoints={{
-          320: { slidesPerView: 2 },
-          480: { slidesPerView: 3 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
+        style={{
+          "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-color": "#fff",
         }}
-        onBeforeInit={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
+        spaceBetween={10}
+        navigation={true}
+        thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper2"
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <ProjectCard item={item} />
+            <img src={item.link} className="min-h-80 max-h-80 object-cover" /> 
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper"
+      >
+        {data.map((item) => (
+          <SwiperSlide key={item.id}>
+            <img src={item.link} className="min-h-20 max-h-20 object-cover" />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -73,4 +81,4 @@ function OtherProjects() {
   );
 }
 
-export default OtherProjects;
+export default GalleryImage;
