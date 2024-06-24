@@ -1,7 +1,10 @@
+import { getData } from "@/utils/get_data";
 import React from "react";
 import Slider from "./Slider";
 
 async function page() {
+  const data = await getData("agent/agent/");
+
   return (
     <div className="">
       <div className="text-center max-w-lg m-auto">
@@ -9,14 +12,9 @@ async function page() {
         <small>
           برای تماس از راه های ارتباطی زیر می توانید استفاده نمایید .
         </small>
-        <small>
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-          استفاده از طراحان گرافیک است،چاپگرها و متون بلکه روزنامه و مجله ستون و
-          سطرآنچنان که لازم است، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
-          می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده،
-        </small>
+        <small>{data.description}</small>
       </div>
-      <Slider />
+      <Slider branches={data.branches} />
     </div>
   );
 }

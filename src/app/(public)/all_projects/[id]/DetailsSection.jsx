@@ -1,5 +1,6 @@
 import TitleSection from "@/app/components/common/TitleSection";
 import { IconAlertCircle } from "@tabler/icons-react";
+import Link from "next/link";
 import React from "react";
 
 let data = [
@@ -33,7 +34,16 @@ let data = [
 function DetailsSection() {
   return (
     <div className="space-y-6">
-      <TitleSection title="پروژه هتلینگ مشهد" />
+      <div className="flex justify-between items-center">
+        <TitleSection title="پروژه هتلینگ مشهد" />
+        <Link
+          href="http://45.156.186.124:8002/"
+          target="_blank"
+          className="underline text-cu_primary-100"
+        >
+          دیدن نمای 360 پروژه
+        </Link>
+      </div>
       <small className="leading-8">
         پرو در زمینی به مساحت ۷۵۰۰ متر مربع با زیربنای حدود ۳۷۰۰۰ مترمربع به
         صورت ۲ بلوک، در ۱۱ طبقه شامل ۸ طبقه مسکونی، ۱ طبقه همکف و ۲ طبقه زیرزمین

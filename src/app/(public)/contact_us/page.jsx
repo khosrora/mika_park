@@ -2,8 +2,13 @@ import React from "react";
 import TitlePage from "@/app/components/common/TitlePage";
 import FormContactUs from "./FormContactUs";
 import DetailsContactUs from "./DetailsContactUs";
+import { getData } from "@/utils/get_data";
 
-function page() {
+export default async function page() {
+  const addresses = await getData("contactus/addresses/");
+  const emails = await getData("contactus/emails/");
+  const phones = await getData("contactus/phones/");
+
   return (
     <div className="p-4 space-y-4 lg:space-y-8">
       <TitlePage text="تماس با ما" />
@@ -23,5 +28,3 @@ function page() {
     </div>
   );
 }
-
-export default page;

@@ -1,5 +1,4 @@
 "use client";
-import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,10 +9,10 @@ import "swiper/css/effect-coverflow";
 import "./styles.css";
 
 // import required modules
-import { EffectCoverflow } from "swiper/modules";
 import SalesCart from "@/app/components/common/SalesCart";
+import { EffectCoverflow } from "swiper/modules";
 
-export default function Slider() {
+export default function Slider({ branches }) {
   return (
     <div className="sales_offices">
       <Swiper
@@ -32,9 +31,9 @@ export default function Slider() {
         modules={[EffectCoverflow]}
         className="mySwiper"
       >
-        {[1, 2, 3, 4].map((i) => (
-          <SwiperSlide key={i}>
-            <SalesCart />
+        {branches.map((i) => (
+          <SwiperSlide key={i.id}>
+            <SalesCart item={i} />
           </SwiperSlide>
         ))}
       </Swiper>

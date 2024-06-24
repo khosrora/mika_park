@@ -1,8 +1,11 @@
 "use client";
+import SkDives from "@/app/components/loading/SkDives";
+import { fetcher, getData } from "@/utils/get_data";
 import React, { useState } from "react";
 import Lightbox from "react-awesome-lightbox";
 // You need to import the CSS only once
 import "react-awesome-lightbox/build/style.css";
+import useSWR from "swr";
 
 let data = [
   {
@@ -33,6 +36,11 @@ let data = [
 ];
 
 function IndexGallery() {
+  const { data, isLoading, error } = useSWR(["gallery/galleries/"], fetcher);
+
+  if (!!isLoading) return <SkDives />;
+  if (error) return <p> {error.message} </p>;
+
   const [lightboxImage, setLightboxImage] = useState();
   const [indexImage, setIndexImage] = useState();
 

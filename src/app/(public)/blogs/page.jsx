@@ -1,7 +1,16 @@
+"use client";
 import BlogCart from "../../components/common/BlogCart";
 import LatestNews from "../../components/common/LatestNews";
+import useSWR from "swr";
+import { fetcher } from "@/utils/get_data";
+import SkDives from "@/app/components/loading/SkDives";
 
 function page() {
+  const { data, isLoading, error } = useSWR(["blog/blogs"], fetcher);
+
+  if (!!isLoading) return <SkDives />;
+  if (error) return <p> {error.message} </p>;
+  
   return (
     <div>
       <div className="grid grid-cols-7">
