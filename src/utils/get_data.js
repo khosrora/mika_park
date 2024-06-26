@@ -17,5 +17,10 @@ export const getDataAPI = async (array) => {
     return res;
 };
 
+export const postDataAPI = async (array, data) => {
+    const res = await axios.post(`${base_api}${array[0]}`, data);
+    return res;
+};
+
 export const fetcher = (url) =>
     getDataAPI(url).then((res) => res.data);

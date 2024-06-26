@@ -1,32 +1,30 @@
 import { IconArrowNarrowLeft } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
+import Moment from "./Moment";
 
-function NewsCart() {
+function NewsCart({ news }) {
   return (
     <div className="card bg-white mx-2">
       <figure className="p-4">
-        <img
-          src="https://www.remlimited.com/media/qrxi1w05/dsc_2501.jpg?center=0%2C0&heightratio=0.5306&mode=crop&upscale=true&width=1920"
-          alt="Shoes"
-          className="rounded-xl"
-        />
+        <img src={news.image.image} alt={news.title} className="rounded-xl" />
       </figure>
       <div className="card-body text-right">
-        <h2 className="card-title">بهترین عایق های صداگیر</h2>
+        <h2 className="card-title">{news.title}</h2>
         <p className="text-xs leading-6">
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-          استفاده از طراحان گرافیک است،{" "}
+          {news.short_desc.length > 60
+            ? `${news.short_desc.substring(0, 60)}...`
+            : news.short_desc}
         </p>
         <div className="card-actions flex justify-between items-center">
           <Link
-            href="/news/1"
+            href={`/news/${news.slug}`}
             className="text-cu_primary-100 flex justify-start items-center gap-x-4"
           >
             ادامه مطلب
             <IconArrowNarrowLeft size={24} stroke={1} />
           </Link>
-          <small className="text-xs">1403/02/01</small>
+          <Moment time={news.publish_date} />
         </div>
       </div>
     </div>

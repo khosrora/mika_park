@@ -8,7 +8,7 @@ import LocationBlue from "@/app/components/Icons/LocationBlue";
 import PhoneBlue from "@/app/components/Icons/PhoneBlue";
 import EmailBlue from "@/app/components/Icons/EmailBlue";
 
-function DetailsContactUs() {
+function DetailsContactUs({ addresses, phones, emails }) {
   return (
     <div className="space-y-4 lg:w-1/2">
       <TitleSection title="راه های ارتباطی" />
@@ -18,30 +18,38 @@ function DetailsContactUs() {
       </small>
       <div className="flex justify-start items-center">
         <InstagramSvg />
-        <AparatSvg />
         <WhatsUpSvg />
       </div>
       <div className="">
-        <div className="flex justify-start items-center gap-x-4">
-          <LocationBlue />
-          <small>زاهدان زیباشهر نبش پیامبر اعظم 11</small>
-        </div>
+        {addresses.map((item) => (
+          <div
+            key={item.id}
+            className="flex justify-start items-center gap-x-4"
+          >
+            <LocationBlue />
+            <small>{item.address}</small>
+          </div>
+        ))}
         <div className="divider"></div>
         <div className="grid grid-cols-2 gap-4">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="flex justify-start items-center gap-x-4">
+          {phones.map((i) => (
+            <div key={i.id} className="flex justify-start items-center gap-x-4">
               <PhoneBlue />
-              <small>09158569854</small>
+              <small>{i.phone}</small>
             </div>
           ))}
         </div>
         <div className="divider"></div>
-        <div className="flex justify-start items-center gap-x-4">
-          <EmailBlue />
-          <small>milapark@gmail.com</small>
-        </div>
+        {emails.map((item) => (
+          <div
+            key={item.id}
+            className="flex justify-start items-center gap-x-4"
+          >
+            <EmailBlue />
+            <small>{item.email}</small>
+          </div>
+        ))}
       </div>
-
     </div>
   );
 }

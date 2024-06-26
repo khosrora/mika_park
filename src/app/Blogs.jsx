@@ -10,6 +10,7 @@ import SwipperController from "./components/common/SwipperController";
 
 function Blogs() {
   const swiperRef = useRef();
+
   return (
     <div className="space-y-4">
       <div className="p-4 flex justify-between items-center">
@@ -35,9 +36,7 @@ function Blogs() {
         // onSwiper={(swiper) => console.log(swiper)}
       >
         {[1, 2, 3, 4, 5, 6].map((i) => (
-          <SwiperSlide key={i}>
-            <BlogCart />
-          </SwiperSlide>
+          <SwiperSlide key={i}>{/* <BlogCart /> */}</SwiperSlide>
         ))}
       </Swiper>
     </div>

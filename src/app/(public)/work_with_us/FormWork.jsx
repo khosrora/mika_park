@@ -2,19 +2,39 @@
 import ButtonCu from "@/app/components/common/ButtonCu";
 import InputCu from "@/app/components/common/InputCu";
 import TextareaCu from "@/app/components/common/TextareaCu";
+import SkDives from "@/app/components/loading/SkDives";
+import { fetcher, postDataAPI } from "@/utils/get_data";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import useSWR from 'swr'
 
 function FormWork() {
+
+  const {data , isLoading , error} = useSWR(['cooperation/types/'] , fetcher)
+
   const {
     register,
     handleSubmit,
     watch,
+    reset , 
     formState: { errors },
   } = useForm();
+  console.log(errors);
+  const onSubmit = async (data) => {
+    try {
+      const {status}  = await postDataAPI(['cooperation/send_request/'] , data)
+      if(status === 201) {
+        toast.success("پیام شما با موفقیت ارسال شد");
+        reset();
+      }
+    } catch (error) {
+      toast.error("مشکلی از سمت سرور رخ داده است")
+    }
+  };
 
-  const onSubmit = (data) => console.log(data);
-
+  if (!!isLoading) return <SkDives />;
+  if (error) return <p> {error.message} </p>;
   return (
     <div className="bg-white p-4 lg:rounded-md">
       <p>درخواست همکاری</p>
@@ -26,38 +46,38 @@ function FormWork() {
   <div className="label">
     <span className="label-text-alt">نوع همکاری</span>
   </div>
-  <select {...register('type' , { required : {value : true , message : 'این فیلد الزامی است'} })} className="select select-bordered">
+  <select name="type" {...register('type' , { required : {value : true , message : 'این فیلد الزامی است'} })} className="select select-bordered">
     <option disabled selected>نوع همکاری خود را مشخص کنید</option>
-    <option>Star Wars</option>
-    <option>Harry Potter</option>
-    <option>Lord of the Rings</option>
-    <option>Planet of the Apes</option>
-    <option>Star Trek</option>
+    {
+      data.map(item => 
+        <option value={item.id} key={item.id}> {item.title} </option>
+        )
+    }
   </select>
   <div className="label">
-    <span className="label-text-alt text-red-700">{errors?.lastName?.message}</span>
+    <span className="label-text-alt text-red-700">{errors?.type?.message}</span>
   </div>
       </label>
       <InputCu
           title="نام "
           placeholder="نام خود را وارد نمایید"
-          name="firstName"
-          validation={...register("firstName" , { required : {value : true , message : 'این فیلد الزامی است' } })}
-          errorMessage={errors?.firstName?.message}
+          name="first_name"
+          validation={...register("first_name" , { required : {value : true , message : 'این فیلد الزامی است' } })}
+          errorMessage={errors?.first_name?.message}
         />
       <InputCu
           title="نام خانوادگی"
           placeholder="نام خانوادگی خود را وارد نمایید"
-          name="lastName"
-          validation={...register("lastName" , { required : {value : true , message : 'این فیلد الزامی است' } })}
-          errorMessage={errors?.lastName?.message}
+          name="last_name"
+          validation={...register("last_name" , { required : {value : true , message : 'این فیلد الزامی است' } })}
+          errorMessage={errors?.last_name?.message}
         />
       <InputCu
           title="شماره موبایل"
           placeholder="شماره موبایل خود را وارد نمایید"
-          name="phone_number"
-          validation={...register("phone_number" , { required : {value : true , message : 'این فیلد الزامی است' } })}
-          errorMessage={errors?.phone_number?.message}
+          name="phone"
+          validation={...register("phone" , { required : {value : true , message : 'این فیلد الزامی است' } })}
+          errorMessage={errors?.phone?.message}
         />
       <InputCu
           title="پست الکترونیک"
@@ -66,20 +86,21 @@ function FormWork() {
           validation={...register("email" , { required : {value : true , message : 'این فیلد الزامی است' } })}
           errorMessage={errors?.email?.message}
         />
-      <InputCu
+      {/* <InputCu
           title="فایل رزومه"
           placeholder="فایل رزومه خود را بارگذاری کنید"
-          name="file"
+          name="cv"
           type='file'
-          validation={...register("file" , { required : {value : true , message : 'این فیلد الزامی است' } })}
-          errorMessage={errors?.file?.message}
-        />
+          validation={...register("cv" , { required : {value : true , message : 'این فیلد الزامی است' } })}
+          errorMessage={errors?.cv?.message}
+        /> */}
+        <br />
      <TextareaCu
         title="متن پیام"
         placeholder="متن پیام خود را وارد نمایید"
-        name="desc"
-        validation={...register("desc" , { required : {value : true , message : 'این فیلد الزامی است' } })}
-        errorMessage={errors?.desc?.message}
+        name="message"
+        validation={...register("message" , { required : {value : true , message : 'این فیلد الزامی است' } })}
+        errorMessage={errors?.message?.message}
         />
         <br />
         <ButtonCu type="submit" title='ثبت درخواست'  />

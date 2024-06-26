@@ -14,7 +14,7 @@ export default async function page() {
       <TitlePage text="تماس با ما" />
       <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:items-start lg:gap-x-12">
         <FormContactUs />
-        <DetailsContactUs />
+        <DetailsContactUs addresses={addresses} phones={phones} emails={emails} />
       </div>
 
       <iframe
