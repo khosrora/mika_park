@@ -70,8 +70,8 @@ function Header() {
             </ul>
             <div className="flex justify-end items-center gap-x-2 lg:bg-cu_primary-100/10 lg:p-2 lg:rounded-md">
               <PhoneSvg />
-              <a href="tel:09332839823" className="text-cu_primary-100 ">
-                933-283-9823
+              <a href="tel:۰۹۰۳۱۹۵۰۹۰۳" className="text-cu_primary-100 ">
+                ۰۹۰۳۱۹۵۰۹۰۳
               </a>
             </div>
           </div>
