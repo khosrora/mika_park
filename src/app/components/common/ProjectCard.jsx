@@ -3,10 +3,10 @@ import React from "react";
 
 function ProjectCard({ item }) {
   return (
-    <Link key={item.id} href="/all_projects/1">
+    <Link key={item.id} href={`/all_projects/${item.id}`}>
       <div
         style={{
-          "--image-url": `url(${item.link})`,
+          "--image-url": `url(${item.image})`,
         }}
         className="bg-[image:var(--image-url)] h-60 bg-cover mx-2 rounded-lg relative overflow-hidden lg:h-96"
       >

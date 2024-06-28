@@ -20,7 +20,7 @@ function FormWork() {
     reset , 
     formState: { errors },
   } = useForm();
-  console.log(errors);
+  
   const onSubmit = async (data) => {
     try {
       const {status}  = await postDataAPI(['cooperation/send_request/'] , data)

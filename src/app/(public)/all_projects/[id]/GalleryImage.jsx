@@ -41,7 +41,7 @@ let data = [
   },
 ];
 
-function GalleryImage() {
+function GalleryImage({ gallery }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <div className="min-w-0 max-w-lg allprojects lg:max-h-[600px]">
@@ -56,9 +56,13 @@ function GalleryImage() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
-        {data.map((item) => (
+        {gallery.map((item) => (
           <SwiperSlide key={item.id}>
-            <img src={item.link} className="min-h-80 max-h-80 object-cover" /> 
+            <img
+              alt={item.title}
+              src={item.url}
+              className="min-h-80 max-h-80 object-cover"
+            />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -71,9 +75,13 @@ function GalleryImage() {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper"
       >
-        {data.map((item) => (
+        {gallery.map((item) => (
           <SwiperSlide key={item.id}>
-            <img src={item.link} className="min-h-20 max-h-20 object-cover" />
+            <img
+              alt={item.title}
+              src={item.url}
+              className="min-h-20 max-h-20 object-cover"
+            />
           </SwiperSlide>
         ))}
       </Swiper>

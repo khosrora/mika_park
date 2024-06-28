@@ -6,7 +6,7 @@ import Maps from "./Maps";
 import Possibilities from "./Possibilities";
 import Tabs from "./Tabs";
 
-function Features() {
+function Features({ features }) {
   const [tab, setTab] = useState(1);
 
   const renderItem = (tab) => {
@@ -14,7 +14,7 @@ function Features() {
       case 1:
         return <Possibilities />;
       case 2:
-        return <FeaturesItem />;
+        return <FeaturesItem props={features.props} />;
       case 3:
         return <Maps />;
     }

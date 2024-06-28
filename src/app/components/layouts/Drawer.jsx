@@ -10,7 +10,7 @@ function Drawer() {
   const pathname = usePathname();
 
   return (
-    <div className="drawer drawer-end" dir="ltr">
+    <div className="drawer drawer-end z-[999]" dir="ltr">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}

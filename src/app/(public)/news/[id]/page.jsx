@@ -3,7 +3,6 @@ import React from "react";
 
 async function page({ params: { id } }) {
   const news = await getData(`new/${id}/`);
-  console.log(news);
   return (
     <div>
       <div className="flex justify-center items-center my-8">

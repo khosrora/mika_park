@@ -31,11 +31,11 @@ let data = [
   },
 ];
 
-function DetailsSection() {
+function DetailsSection({ details }) {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <TitleSection title="پروژه هتلینگ مشهد" />
+        <TitleSection title={details.title} />
         <Link
           href="http://45.156.186.124:8002/"
           target="_blank"
@@ -44,17 +44,12 @@ function DetailsSection() {
           دیدن نمای 360 پروژه
         </Link>
       </div>
-      <small className="leading-8">
-        پرو در زمینی به مساحت ۷۵۰۰ متر مربع با زیربنای حدود ۳۷۰۰۰ مترمربع به
-        صورت ۲ بلوک، در ۱۱ طبقه شامل ۸ طبقه مسکونی، ۱ طبقه همکف و ۲ طبقه زیرزمین
-        طراحى گردیده است. این پروژه در بلوار معلم واقع در منطقه هجده در جنوب
-        غربی شهر مشهد قرار دارد. در این پروژه بیش از ۳۰ نفر در دفاتر اداری و ۱۵۰
-        نفر نیرو اجرایی در کارگاه مشغول به کار هستند. پروژه تالی پارک معلم در
-        تلاش است تا با دو شیفت کاری، سرعت اجرا را بالا برده و به یکی از اهداف
-        خود یعنی تحویل به موقع پروژه‌ها‎ برسد.
-      </small>
+      <div
+        className="leading-8"
+        dangerouslySetInnerHTML={{ __html: details.desc }}
+      ></div>
       <div className="flex flex-col gap-y-4">
-        {data.map((item) => (
+        {details.specs.map((item) => (
           <div key={item.id}>
             <div className="flex justify-between items-center lg:max-w-md">
               <div className="flex justify-start items-center gap-x-2">
