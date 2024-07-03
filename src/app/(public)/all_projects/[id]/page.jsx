@@ -17,7 +17,7 @@ export default async function page({ params: { id } }) {
         <DetailsSection details={res} />
       </div>
       <Features features={res} />
-      <Blocks />
+      <Blocks items={res.blocks} />
     </div>
   );
 }

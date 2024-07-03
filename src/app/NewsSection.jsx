@@ -1,6 +1,25 @@
-import React from "react";
+"use client";
+import { postDataAPI } from "@/utils/get_data";
+import { useState } from "react";
+import { toast } from "sonner";
 
 function NewsSection() {
+  const [phone, setPhone] = useState(null);
+
+  const handleSendPhone = async () => {
+    try {
+      if (phone === null) return toast.error("شماره تماس خود را وارد کنید");
+      const { status } = await postDataAPI(["new/send_request"], {
+        phone,
+      });
+      if (status === 201) {
+        toast.success("شماره تماس شما ارسال شد");
+      }
+    } catch (error) {
+      toast.error(error.response.data.phone[0]);
+    }
+  };
+
   return (
     <div className="p-4 lg:p-0">
       <div className="bg-white rounded-lg p-4">
@@ -16,9 +35,13 @@ function NewsSection() {
               <input
                 placeholder="شماره تلفن خود را وارد نمایید"
                 className="w-full p-2 text-xs text-zinc-950"
+                onChange={(e) => setPhone(e.target.value)}
               />
             </div>
-            <div className="w-1/4 bg-cu_primary-100 p-2 h-full flex justify-center items-center">
+            <div
+              onClick={() => handleSendPhone()}
+              className="w-1/4 bg-cu_primary-100 p-2 h-full flex justify-center items-center cursor-pointer"
+            >
               <small className="text-xs">ارسال</small>
             </div>
           </div>

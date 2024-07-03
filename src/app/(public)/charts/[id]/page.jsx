@@ -1,19 +1,20 @@
-import React from "react";
-import BarChart from "./BarChart";
+import { getData } from "@/utils/get_data";
 import PieChart from "./PieChart";
 
-function page() {
+export default async function page({ params: { id } }) {
+  const res = await getData(`project/blocks/${id}/`);
+
   return (
     <div>
       <div className="bg-white p-6 rounded-md">
         <div className="mb-4">
-          <p>بلوک 1</p>
+          <p>{res.title}</p>
         </div>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
+          {res.specs.map((i) => (
             <div className="flex justify-between items-center">
-              <p className="text-xs font-light">مهندس ناظر : </p>
-              <p>محمدرضایی</p>
+              <p className="text-xs font-light">{i.key}</p>
+              <p>{i.value}</p>
             </div>
           ))}
         </div>
@@ -27,5 +28,3 @@ function page() {
     </div>
   );
 }
-
-export default page;
