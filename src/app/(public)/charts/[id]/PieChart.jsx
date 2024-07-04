@@ -71,7 +71,8 @@ export const dataTask = {
   ],
 };
 
-function PieChart() {
+function PieChart({ chart }) {
+
   const [dataGraph, setDataGraph] = useState(data);
   const chartRef = useRef();
   const onClick = (e) => {

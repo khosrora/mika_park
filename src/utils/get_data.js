@@ -7,7 +7,9 @@ export async function getData(link) {
     const res = await fetch(base_api + link, {
         cache: 'no-store'
     });
+
     const repo = await res.json();
+
     // Pass data to the page via props
     return repo;
 }

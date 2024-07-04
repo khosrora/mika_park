@@ -20,8 +20,8 @@ export default async function page({ params: { id } }) {
         </div>
       </div>
       <div className="grid grid-cols-2 mt-4 lg:grid-cols-4">
-        {[1, 2, 3, 4].map((i) => (
-          <PieChart />
+        {res.charts.map((item) => (
+          <PieChart chart={item} />
         ))}
       </div>
       {/* <BarChart /> */}

@@ -13,6 +13,7 @@ import SalesCart from "@/app/components/common/SalesCart";
 import { EffectCoverflow } from "swiper/modules";
 
 export default function Slider({ branches }) {
+
   return (
     <div className="sales_offices">
       <Swiper

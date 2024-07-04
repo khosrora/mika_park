@@ -16,7 +16,7 @@ function Features({ features }) {
       case 2:
         return <FeaturesItem props={features.props} />;
       case 3:
-        return <Maps />;
+        return <Maps link={features.google_map_url} />;
     }
   };
 

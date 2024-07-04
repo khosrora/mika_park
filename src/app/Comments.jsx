@@ -6,6 +6,35 @@ import TitleSection from "./components/common/TitleSection";
 import Comment from "./components/common/Comment";
 import SwipperController from "./components/common/SwipperController";
 
+const reviews = [
+  {
+    name: 'علی رضایی',
+    date: '۱۵ دی ۱۴۰۲',
+    comment: 'پروژه بسیار خوبی بود. من از کیفیت ساخت و طراحی بسیار راضی بودم. این هتل واقعاً به من آرامش داد و تجربه‌ای بی‌نظیر بود.',
+  },
+  {
+    name: 'سارا احمدی',
+    date: '۱ اسفند ۱۴۰۲',
+    comment: 'هتلینگ به بهترین شکل ممکن انجام شده. تجربه‌ای فوق‌العاده داشتم و همه چیز بی‌نقص بود. قطعاً باز هم به این هتل می‌آیم.',
+  },
+  {
+    name: 'محمد حسینی',
+    date: '۱۵ فروردین ۱۴۰۳',
+    comment: 'تمام جزئیات به دقت رعایت شده و محیطی آرام و زیبا فراهم کرده‌اند. از اقامتم لذت بردم و از خدمات عالی این هتل متشکرم.',
+  },
+  {
+    name: 'فاطمه کریمی',
+    date: '۲۵ اردیبهشت ۱۴۰۳',
+    comment: 'این پروژه یکی از بهترین پروژه‌هایی است که تا به حال دیده‌ام. خدمات عالی بود و کارکنان بسیار مهربان بودند. پیشنهاد می‌کنم به همه.',
+  },
+  {
+    name: 'رضا عظیمی',
+    date: '۱۰ خرداد ۱۴۰۳',
+    comment: 'فضای بسیار خوبی دارد و از هر نظر قابل تحسین است. بی‌نهایت از این اقامت راضی بودم و مطمئناً دوباره به این هتل خواهم آمد.',
+  },
+];
+
+
 function Comments() {
   const swiperRef = useRef();
   return (
@@ -33,9 +62,9 @@ function Comments() {
         //   onSlideChange={() => console.log("slide change")}
         //   onSwiper={(swiper) => console.log(swiper)}
       >
-        {[1, 2, 3, 4, 5].map((i) => (
+        {reviews.map((i) => (
           <SwiperSlide key={i}>
-            <Comment />
+            <Comment comment={i} />
           </SwiperSlide>
         ))}
       </Swiper>
