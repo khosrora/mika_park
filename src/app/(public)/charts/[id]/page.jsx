@@ -3,7 +3,6 @@ import PieChart from "./PieChart";
 
 export default async function page({ params: { id } }) {
   const res = await getData(`project/blocks/${id}/`);
-
   return (
     <div>
       <div className="bg-white p-6 rounded-md">
