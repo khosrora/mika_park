@@ -20,7 +20,7 @@ function IndexLayout({ children }) {
           },
         }}
       />
-      <div className="max-w-7xl m-auto">
+      <div className="max-w-screen-xl m-auto">
         <Header />
         {children}
         <Footer />

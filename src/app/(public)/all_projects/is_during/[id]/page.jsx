@@ -4,7 +4,7 @@ import DetailsSection from "./DetailsSection";
 import Features from "./Features";
 import GalleryImage from "./GalleryImage";
 
-function page({ params }) {
+function page() {
 
   return (
     <div className="p-4 space-y-4">

@@ -7,7 +7,6 @@ import GalleryImage from "./GalleryImage";
 
 export default async function page({ params: { id } }) {
   const res = await getData(`project/projects/${id}/`);
-
   
   return (
     <div className="p-4 space-y-4">

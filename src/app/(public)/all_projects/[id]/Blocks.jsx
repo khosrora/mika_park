@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 
 function Blocks({ items }) {
-
   return (
     <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
       {items.map((item) => (
@@ -11,8 +10,8 @@ function Blocks({ items }) {
           <div className="mb-4">
             <p>{item.title}</p>
           </div>
-          {item.specs.map((i) => (
-            <div className="flex justify-between items-center">
+          {item.specs.map((i, index) => (
+            <div key={index} className="flex justify-between items-center">
               <p className="text-xs font-light">{i.key}</p>
               <p>{i.value}</p>
             </div>

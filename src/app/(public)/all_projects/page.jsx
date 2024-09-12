@@ -24,7 +24,7 @@ export default async function page({ searchParams: { isDuring } }) {
       ) : (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {projects.results.map((item) => (
-            <ProjectCard item={item} />
+            <ProjectCard key={item.id} item={item} />
           ))}
         </div>
       )}

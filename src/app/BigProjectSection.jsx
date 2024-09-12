@@ -3,6 +3,7 @@ import TitleSection from "./components/common/TitleSection";
 import Video from "./components/common/Video";
 
 function BigProjectSection({ details }) {
+
   return (
     <div className="p-4 space-y-4 lg:flex lg:flex-row-reverse lg:justify-between lg:items-center">
       <div className="lg:w-1/2 space-y-4">

@@ -16,7 +16,7 @@ export default async function Home() {
   return (
     <div className="lg:space-y-14">
       <Header details={data} />
-      <ServicesMikaPark />
+      {/* <ServicesMikaPark /> */}
       <BigProjectSection details={data} />
       <PossibilitiesSection />
       <OtherProjects />

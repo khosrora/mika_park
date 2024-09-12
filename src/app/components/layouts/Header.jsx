@@ -19,8 +19,8 @@ function Header() {
               <Drawer />
               <ImageCu
                 alt="لوگو میکاپارک"
-                width={30}
-                height={30}
+                width={60}
+                height={60}
                 src="/images/logo.png"
               />
               <small className="font-bold lg:text-[18px]">میکاپارک</small>
@@ -38,7 +38,7 @@ function Header() {
                   </Link>
                 </li>
               ))}
-              <details className="dropdown">
+              {/* <details className="dropdown">
                 <summary className="cursor-pointer">پروژه ها</summary>
                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                   <li>
@@ -66,7 +66,7 @@ function Header() {
                     </Link>
                   </li>
                 </ul>
-              </details>
+              </details> */}
             </ul>
             <div className="flex justify-end items-center gap-x-2 lg:bg-cu_primary-100/10 lg:p-2 lg:rounded-md">
               <PhoneSvg />
