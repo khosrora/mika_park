@@ -8,7 +8,7 @@ function Tabs({ tab, setTab }) {
         onClick={() => setTab(1)}
         className={`tab ${tab === 1 ? "tab-active" : ""}`}
       >
-        امکانات
+        معرفی
       </div>
       <div
         role="tab"

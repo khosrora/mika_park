@@ -1,16 +1,23 @@
 import TitleSection from "@/app/components/common/TitleSection";
-import { possibilities } from "@/constance/possibillities";
+import Video from "@/app/components/common/Video";
+// import { possibilities } from "@/constance/possibillities";
 import React from "react";
 
-function Possibilities() {
+function Possibilities({ videos }) {
   return (
     <div className="space-y-4">
-      <TitleSection title="امکانات هتلینگ" />
+      <TitleSection title="فیلم های معرفی" />
 
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-5">
-        {possibilities.map((item) => (
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+        {videos.map((item) => (
           <div key={item.id}>
-            <img src={item.link} />
+            <Video
+              poster="/images/placeHolderVideo.png"
+              src={item.url}
+              width={500}
+              height={500}
+              className="lg:w-1/2"
+            />
           </div>
         ))}
       </div>

@@ -12,7 +12,7 @@ function Features({ features }) {
   const renderItem = (tab) => {
     switch (tab) {
       case 1:
-        return <Possibilities />;
+        return <Possibilities videos={features.media} />;
       case 2:
         return <FeaturesItem props={features.props} />;
       case 3:
