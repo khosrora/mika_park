@@ -49,35 +49,7 @@ function Drawer() {
               </Link>
             </li>
           ))}
-          <details className="dropdown">
-            <summary className="cursor-pointer">پروژه ها</summary>
-            <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-              <li>
-                <Link
-                  href="/all_projects?isDuring=true"
-                  className={`hover:text-cu_primary-100 ${
-                    pathname === "/all_projects?isDuring=true"
-                      ? "text-cu_primary-100"
-                      : ""
-                  }`}
-                >
-                  پروژه های درحال انجام
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/all_projects?isDuring=false"
-                  className={`hover:text-cu_primary-100 ${
-                    pathname === "/all_projects?isDuring=false"
-                      ? "text-cu_primary-100"
-                      : ""
-                  }`}
-                >
-                  پروژه های انجام شده
-                </Link>
-              </li>
-            </ul>
-          </details>
+      
         </ul>
       </div>
     </div>
