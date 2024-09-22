@@ -14,7 +14,6 @@ function MegaVideoSection({ details }) {
         // controls
         autoPlay
         loop
-        muted
         poster="/images/placeHolderVideo.png"
         className="absolute z-10 w-full h-full max-w-none rounded-xl"
         style={{ borderRadius : "15px" }}
