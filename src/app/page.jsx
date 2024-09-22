@@ -20,7 +20,6 @@ export default async function Home() {
         <MegaVideoSection details={data} />
       </Suspense>
       <Header details={data} />
-      {/* <ServicesMikaPark /> */}
       <BigProjectSection details={data} />
       <PossibilitiesSection />
       <OtherProjects />
