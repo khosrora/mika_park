@@ -1,7 +1,4 @@
 "use client";
-import React from "react";
-import TitleSection from "./components/common/TitleSection";
-import Video from "./components/common/Video";
 
 // src={details.media.url}
 // poster="/images/placeHolderVideo.png"
