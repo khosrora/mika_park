@@ -1,7 +1,8 @@
-import IndexGallery from "./IndexGallery";
+import Index from "./Index";
+
 
 function page() {
-  return <IndexGallery />;
+  return <Index />;
 }
 
 export default page;
