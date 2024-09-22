@@ -1,7 +1,5 @@
 "use client";
 
-// src={details.media.url}
-// poster="/images/placeHolderVideo.png"
 function MegaVideoSection({ details }) {
   return (
     <div className="p-4">
