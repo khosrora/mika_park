@@ -13,6 +13,12 @@ function Footer() {
     error,
   } = useSWR(["siteinfo/footer/"], fetcher);
 
+  const {
+    data: link,
+    isLoading: linksLoad,
+    error: linksError,
+  } = useSWR(["siteinfo/communications/"], fetcher);
+
   if (!!isLoading) return <div className=""></div>;
   if (error) return <p> {error.message} </p>;
 
@@ -34,7 +40,7 @@ function Footer() {
       <nav>
         <h6 className="footer-title">راه های ارتباطی</h6>
         <div className="flex justify-start items-center">
-          <a className="link link-hover">
+          <a href={link[0].link} target="_blank" className="link link-hover">
             <IconBrandInstagram color="grey" stroke={1} />
           </a>
         </div>

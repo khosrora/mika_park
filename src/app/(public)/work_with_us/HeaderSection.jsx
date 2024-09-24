@@ -5,7 +5,7 @@ function HeaderSection() {
   return (
     <div className="p-4 space-y-4 flex flex-col lg:flex-row-reverse lg:gap-x-8">
       <img
-        src="https://3back.com/app/uploads/2017/07/Team-scaled.jpg"
+        src="/images/original.png"
         width={500}
         height={500}
         alt="work with us"

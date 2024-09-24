@@ -8,7 +8,7 @@ function MegaVideoSection({ details }) {
           controls
           autoPlay
           loop
-          poster="/images/123.png"
+          poster="/images/group.png"
           className="absolute z-10 w-full h-full max-w-none"
         >
           <source src={details.media.url} type="video/mp4" />

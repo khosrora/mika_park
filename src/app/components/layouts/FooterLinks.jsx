@@ -12,7 +12,7 @@ function FooterLinks() {
 
   if (!!isLoading) return <div className=""></div>;
   if (error) return <p> {error.message} </p>;
-
+  
   return (
     <>
       <nav>
