@@ -9,10 +9,9 @@ function FooterLinks() {
     isLoading,
     error,
   } = useSWR(["siteinfo/footer_links/"], fetcher);
-
-  if (!!isLoading) return <div className=""></div>;
-  if (error) return <p> {error.message} </p>;
   
+  if (isLoading) return <div className=""></div>;
+  if (error) return <p> {error.message} </p>;
   return (
     <>
       <nav>

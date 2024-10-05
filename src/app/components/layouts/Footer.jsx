@@ -19,8 +19,8 @@ function Footer() {
     error: linksError,
   } = useSWR(["siteinfo/communications/"], fetcher);
 
-  if (!!isLoading) return <div className=""></div>;
-  if (error) return <p> {error.message} </p>;
+  if (linksLoad || isLoading) return <div className=""></div>;
+  if (linksError || error) return <p> {error.message} </p>;
 
   return (
     <footer className="footer p-10 bg-white text-base-content mt-14 lg:rounded-md">
@@ -40,9 +40,11 @@ function Footer() {
       <nav>
         <h6 className="footer-title">راه های ارتباطی</h6>
         <div className="flex justify-start items-center">
-          <a href={link[0].link} target="_blank" className="link link-hover">
-            <IconBrandInstagram color="grey" stroke={1} />
-          </a>
+          {!!link[0].link && (
+            <a href={link[0]?.link} target="_blank" className="link link-hover">
+              <IconBrandInstagram color="grey" stroke={1} />
+            </a>
+          )}
         </div>
       </nav>
     </footer>
