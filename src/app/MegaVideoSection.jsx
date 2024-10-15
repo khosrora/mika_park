@@ -1,20 +1,42 @@
 "use client";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-function MegaVideoSection({ details }) {
+// Import Swiper styles
+import "swiper/css";
+import Image from "next/image";
+
+let banners = [
+  {
+    id: 1,
+    link: "/images/Group 152271.png",
+  },
+  {
+    id: 2,
+    link: "/images/Group 152270.png",
+  },
+];
+
+function MegaVideoSection() {
   return (
-    <div className="p-4">
-      <header className="relative flex items-center justify-center h-64 lg:h-screen mb-4 overflow-hidden rounded-md">
-        <video
-          controls
-          autoPlay
-          loop
-          poster="/images/group.png"
-          className="absolute z-10 w-full h-full max-w-none"
-        >
-          <source src={details.media.url} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </header>
+    <div className="space-y-4">
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1.2}
+        // breakpoints={{
+        //   320: { slidesPerView: 2 },
+        //   480: { slidesPerView: 3 },
+        //   768: { slidesPerView: 3 },
+        //   1024: { slidesPerView: 4 },
+        // }}
+        // onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+      >
+        {banners.map((i) => (
+          <SwiperSlide key={i.id}>
+            <Image src={i.link} width={3000} height={3000} className="w-full object-cover  rounded-md" />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }
